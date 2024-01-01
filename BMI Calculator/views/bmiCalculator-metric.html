@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- JS -->
+    <script defer src="js/switchUnits.js"></script>
+    <script defer src="js/checkValidation.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-8">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <a class="navbar-brand" href="/"><h1>BMI CALCULATOR</h1></a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item">
+                                <a class="nav-link text-body" href="/">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                <a class="nav-link text-body  active" href="#">BMI</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-body" href="/history">History</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+                <div class="col-2"></div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container mb-2">
+            <div class="row">
+                <div class="col-4"></div>
+                <div class="col-1"></div>
+                <div class="col-2">
+                    <div class="btn-group dropstart">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                          Unit Type:
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item active" href="#" onclick="switchUnits('metric')">Metric</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="switchUnits('us')">US</a></li>
+                        </ul>
+                    </div>
+                    <form id="myForm" action="/bmiCalculator" method="post" class="mx-auto mt-3 d-flex flex-column justify-content-center">
+                        <input type="hidden" name="metric" value="us">
+                        <small>Your Age</small>
+                        <input id="age" type="text" name="age" class="mb-2" placeholder="Example: 25" required oninput='validate("age")'>
+                        <div class="error" id="ageError"></div>
+                        <small>Your Gender</small>
+                        <select name="gender" class="mb-2" required>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                        <small>Your Height(metres)</small>
+                        <input id="height" type="text" name="height" class="mb-2" placeholder="Example: 1.75" required oninput='validate("height")'>
+                        <div class="error" id="heightError"></div>
+                        <small>Your Weight(kilogram)</small>
+                        <input id="weight" type="text" name="weight" class="mb-2" placeholder="Example: 62.5" required oninput='validate("weight")'>
+                        <div class="error" id="weightError"></div>
+                        <button id="checkValidation" type="submit" class="btn btn-primary">Check</button>
+                    </form>
+                    
+                </div>
+                <div class="col-1"></div>
+                <div class="col-4"></div>
+            </div>
+        </div>
+        <div class="container">
+            <div id="bmiResult" class="alert alert-warning alert-dismissible fade hide" role="alert">
+                Your Calculated BMI is: <strong id="bmiPlaceholder">[BMI_PLACEHOLDER]</strong>, <strong id="classificationPlaceholder">[CLASSIFICATION_PLACEHOLDER]</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container d-flex justify-content-center"><h5>Made by: Baktybaiuly Amandyk, SE-2202</h5></div>
+    </footer>
+</body>
+</html>
