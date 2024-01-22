@@ -6,6 +6,7 @@
 2. Run `npm install` to install dependencies.
 3. Start the server with `node app.js`.
 4. Access the website at [http://localhost:3000](http://localhost:3000).
+(PS. Writing "Astana" for city name wont work, write "Nur-Sultan")
 
 ## Overview
 
