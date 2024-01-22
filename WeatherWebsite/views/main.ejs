@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Weather App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container d-flex align-items-center">
+            <a class="navbar-brand" href="/">Amandyk's Weather Website</a>
+            <a class="text text-white text-decoration-none" target="_blank" href="https://www.youtube.com/watch?v=gmqu-BLKE-k&list=PLo_wretdH6NvhfR-M9J0VVE1qeJI0weXy&index=1&ab_channel=ghostXD">Made by: Amandyk Baktybaiuly, SE-2202</a>
+        </div>
+    </nav>
+
+    <div style="margin-top: 100px;" class="container">
+      <div class="row">
+        <div class="col-12 col-md-6 mx-auto text-center my-5">
+            <form id="weatherForm" class="form" action="/" method="get">
+              <input type="text" id="cityName" name="cityName" placeholder="*Ex: Atyrau*" required>
+              <button type="submit" class="btn btn-dark">Weather</button>
+            </form>
+        </div>
+      </div>
+    </div>
+
+    <div id="none" class="d-none">
+
+        <div class="container d-flex" id="weatherContainer">
+            <div id="weatherTable">
+            <div class="card mb-5">
+                <div class="card-body">
+                    <h5 class="card-title" id="weatherCity"></h5>
+                    <p class="card-text" id="weatherDescription"></p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" id="weatherTemperature"></li>
+                    <li class="list-group-item" id="weatherWind"></li>
+                    <li class="list-group-item" id="weatherHumidity"></li>
+                    <li class="list-group-item" id="weatherPressure"></li>
+                    <li class="list-group-item" id="weatherClouds"></li>
+                    <li class="list-group-item" id="weatherSunrise"></li>
+                    <li class="list-group-item" id="weatherSunset"></li>
+                </ul>
+            </div>
+            </div>
+
+            <div style="height: 650px" class="card mb-5">
+                <div id="city_name" class="card-header">
+                    City Name
+                </div>
+                <ul style="height: 650px" class="list-group list-group-flush">
+                    <li class="list-group-item" id="cityLat"></li>
+                    <li class="list-group-item" id="cityLong"></li>
+                    <li class="list-group-item" id="cityCountry"></li>
+                    <li class="list-group-item" id="cityPopulation"></li>
+                    <li class="list-group-item" id="cityIsCapital"></li>
+                </ul>
+            </div>
+
+            <div style="flex: 6; padding-right: 10px; padding-left: 10px; padding-top: 5px; padding-bottom: 5px" class="card mb-3 map-container">
+                <div class="card-header">
+ 
+                </div>
+                <div style="height: 650px" id="map"></div>
+            </div>
+        </div>
+
+        <div class="container d-flex" id="weatherContainer">
+            <% if (data && data.data && data.data.length > 0) { %>
+            <table class="table">
+                <thead>
+                <% data.data.forEach((day, index) => { %>
+                    <tr>
+                    <td>Date</td>
+                    <td>Min/Max temperature(°C)</td>
+                    <td>Wind speed (m/s)</td>
+                    <td>Humidity</td>
+                    <td>Weather State</td>
+                    </tr>
+                <% }); %>
+                </thead>
+                <tbody id="forecastTableBody">
+                </tbody>
+            </table>
+            <% } else { %>
+            <p>No weather data available.</p>
+            <% } %>
+        </div>
+
+    </div>
+
+    
+  
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script>
+      
+    </script>
+</body>
+</html>
