@@ -1,5 +1,12 @@
 # Weather Website using Node.js
 
+## Getting Started
+
+1. Clone the repository.
+2. Run `npm install` to install dependencies.
+3. Start the server with `node app.js`.
+4. Access the website at [http://localhost:3000](http://localhost:3000).
+
 ## Overview
 
 This project is a Weather output website developed using Node.js. The application allows users to check the weather on the given city and many more information. The project includes server-side logic for Weather API's, City API's.
@@ -30,7 +37,7 @@ Express.js is used for handling the server, running on port 3000 (`const port = 
 
 ## Integration of NPM Packages
 
-Six npm packages related to the project topic are integrated into the root JavaScript file: 
+Seven npm packages related to the project topic are integrated into the root JavaScript file: 
 - **axios**
 - **dotenv**
 - **ejs**
@@ -39,11 +46,5 @@ Six npm packages related to the project topic are integrated into the root JavaS
 - **path**
 - **morgan**
 
-## Getting Started
 
-1. Clone the repository.
-2. Run `npm install` to install dependencies.
-3. Start the server with `node root.js`.
-4. Access the website at [http://localhost:3000](http://localhost:3000).
 
-Feel free to explore and contribute to this BMI Calculator project!

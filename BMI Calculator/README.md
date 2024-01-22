@@ -1,5 +1,12 @@
 # BMI Calculator Website using Node.js
 
+## Getting Started
+
+1. Clone the repository.
+2. Run `npm install` to install dependencies.
+3. Start the server with `node root.js`.
+4. Access the website at [http://localhost:3000](http://localhost:3000).
+
 ## Overview
 
 This project is a BMI (Body Mass Index) Calculator website developed using Node.js. The application allows users to calculate their BMI based on input values such as age, gender, height, and weight. The project includes server-side logic for BMI calculation, validation, and a history feature to store past calculations.
@@ -50,12 +57,5 @@ The UI includes input fields for age, gender. A dropdown allows users to select 
 ## History
 
 The project includes a history feature that stores past BMI calculations with timestamps. A route is implemented to view the history of BMI calculations.
-
-## Getting Started
-
-1. Clone the repository.
-2. Run `npm install` to install dependencies.
-3. Start the server with `node root.js`.
-4. Access the website at [http://localhost:3000](http://localhost:3000).
 
 Feel free to explore and contribute to this BMI Calculator project!
